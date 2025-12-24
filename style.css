@@ -1,0 +1,222 @@
+/* --- Global --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 900px;
+  padding: 20px;
+  margin-inline: auto;
+}
+
+/* --- Styles du Logo & Titres --- */
+.logo-container {
+  padding: 20px 0;
+}
+
+svg.main-logo {
+  width: 300px;
+  max-width: 100%;
+  fill: deeppink;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: 900;
+  cursor: pointer;
+  user-select: none;
+}
+
+.renfort {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Liste des Options --- */
+.option {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.option > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 5px;
+}
+
+.icon-svg {
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.icon-svg:active {
+  transform: scale(0.9);
+}
+
+.count {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+p {
+  font-size: 20px;
+}
+
+p > span {
+  font-weight: 900;
+  color: black;
+}
+
+.option > p {
+  font-size: 15px;
+}
+
+/* --- Récapitulatif --- */
+.recap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.recap > p {
+  color: grey;
+}
+
+.recap p.price {
+  color: black;
+  font-weight: bold;
+  display: inline-block;
+  min-width: 40px;
+  text-align: right;
+}
+
+hr.end {
+  margin-bottom: 10px;
+}
+
+/* --- Sticky Footer (Total) --- */
+.sticky {
+  position: sticky;
+  width: 100%;
+  max-width: 900px;
+  bottom: 10px;
+  z-index: 100;
+}
+
+.total {
+  margin-inline: 10px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.total a {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* --- Radio Buttons --- */
+input {
+  margin-top: 5px;
+  width: 50px;
+  background-color: rgb(238, 238, 238);
+  border: none;
+  padding: 2px 5px;
+  text-align: center;
+}
+
+div.radio-toolbar {
+  display: flex;
+  justify-content: start;
+  margin-top: 5px;
+  display: flex;
+  gap: 3px;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 15px;
+  border-radius: 4px;
+  border: solid 1px lightgrey;
+  color: lightgray;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.radio-toolbar label:hover {
+  background-color: pink;
+  color: white;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+  background-color: pink;
+  color: deeppink;
+  border: solid 1px deeppink;
+}
+
+/* Styles Grisés */
+.radio-toolbar input[type="radio"].gray + label {
+  background-color: transparent;
+  color: #e0e0e0;
+  border-color: #f0f0f0;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.radio-toolbar input[type="radio"].gray:checked + label {
+  background-color: #f5f5f5;
+  color: #bbb;
+  border-color: #ddd;
+}
+
+/* --- Animation FADE IN --- */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
