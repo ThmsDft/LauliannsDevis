@@ -45,6 +45,29 @@ body {
     width: 0 !important;
     height: 0 !important;
   }
+
+  /* Ajustements de marges en mode PWA */
+  main {
+    padding-top: max(
+      40px,
+      env(safe-area-inset-top)
+    ) !important; /* Plus d'espace en haut + safe area */
+    padding-bottom: max(
+      120px,
+      calc(100px + env(safe-area-inset-bottom))
+    ) !important; /* Espace pour le bouton + safe area */
+  }
+
+  .sticky {
+    bottom: max(
+      30px,
+      calc(20px + env(safe-area-inset-bottom))
+    ) !important; /* Plus d'espace en bas + safe area */
+  }
+
+  .logo-container {
+    padding-top: 30px !important; /* Plus d'espace au-dessus du logo */
+  }
 }
 
 a {
