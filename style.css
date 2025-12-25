@@ -7,6 +7,23 @@
   scroll-behavior: smooth;
 }
 
+/* Masquer la scrollbar en mode PWA */
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Pour Chrome, Safari et Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Pour IE, Edge et Firefox */
+body {
+  -ms-overflow-style: none; /* IE et Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 a {
   text-decoration: none;
   color: inherit;
