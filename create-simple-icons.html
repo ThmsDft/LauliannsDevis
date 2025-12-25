@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Générateur d'icônes PWA</title>
+</head>
+<body>
+    <h1>Générateur d'icônes PWA</h1>
+    <p>Cliquez sur les boutons pour télécharger les icônes</p>
+    <button onclick="generateIcon(192)">Télécharger icon-192.png</button>
+    <button onclick="generateIcon(512)">Télécharger icon-512.png</button>
+    
+    <canvas id="canvas" style="display:none;"></canvas>
+    
+    <script>
+        function generateIcon(size) {
+            const canvas = document.getElementById('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            
+            // Fond blanc
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, size, size);
+            
+            // Cercle rose
+            ctx.fillStyle = '#ff1493';
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size * 0.4, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Texte blanc
+            ctx.fillStyle = '#ffffff';
+            ctx.font = `bold ${size * 0.15}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('Devis', size/2, size/2 - size * 0.08);
+            ctx.fillText('Ongles', size/2, size/2 + size * 0.08);
+            
+            // Télécharger
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `icon-${size}.png`;
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        }
+    </script>
+</body>
+</html>
+
