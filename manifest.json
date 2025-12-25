@@ -1,6 +1,6 @@
 {
-  "name": "Devis Ongles - Calculateur de Prix",
-  "short_name": "Devis Ongles",
+  "name": "Lauliann's - Devis",
+  "short_name": "Lauliann's",
   "description": "Calculateur de devis pour prestations d'ongles",
   "start_url": "/LauliannsDevis/index.html",
   "scope": "/LauliannsDevis/",
